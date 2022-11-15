@@ -70,8 +70,16 @@ def insertion(_list, _position=0):
 
 def quick(_list):
     '''
-        Docstring
+        Sort a numeric list using quick sort
+        Args:
+            _list: list to be sorted
+        Returns:
+            _list: sorted list
+        Raises:
+            TypeError: If the list has invalid element(s)
     '''
+
+    
     return
 
 
