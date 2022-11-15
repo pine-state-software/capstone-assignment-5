@@ -88,6 +88,8 @@ def quick(_list):
 
 
 
+
+
 if __name__ == '__main__':
     
     print(bubble([3,2,1,7,9,10,11,45,-1]))
