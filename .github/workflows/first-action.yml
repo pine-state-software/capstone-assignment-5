@@ -69,6 +69,7 @@ jobs:
         run: |
            python -m build
            # see what’s in the dist directory
+           ls -la dist
            
       - name: Upload package
         if: github.event_name == 'push'
