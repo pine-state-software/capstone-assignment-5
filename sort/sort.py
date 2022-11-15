@@ -82,16 +82,26 @@ def quick(_list):
         Raises:
             TypeError: If the list has invalid element(s)
     '''
-
     
-    return
+    return _list
 
 
 
 
 if __name__ == '__main__':
+    
     print(bubble([3,2,1,7,9,10,11,45,-1]))
     print(bubble([0]))
     print(bubble([2,0]))
 
     print(insertion([-30,10,1,0,8,-1,-50]))
+    print(insertion([7]))
+    print(insertion([7,0]))
+    print(insertion([13,56]))
+
+
+    l = [-30,10,1,0,8,-1,-50]
+    insertion(l)
+    print(f"sorted_list: {l}")
+
+    print(quick([]))
