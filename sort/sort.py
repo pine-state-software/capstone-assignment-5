@@ -29,7 +29,6 @@ def bubble(_list):
                 _list[i], _list[i+1] = _list[i+1], _list[i]
                 sorted = False
 
-
 def insertion(_list, _position=0):
     '''
         Sort a numeric list using insertion sort
@@ -57,11 +56,16 @@ def insertion(_list, _position=0):
                 # Move new element down sorted sublist until it is in the correct spot
                 j = 1
                 while _list[i-j+1] < _list[i-j]:
+
+                    # break out of loop if it reaches first element
                     if (i-j) < 0:
-                        return insertion(_list, i+1)
+                        break
+
+                    # Move element down one spot in sorted sublist
                     _list[i-j+1], _list[i-j] = _list[i-j], _list[i-j+1]
                     j += 1
                 
+                # Increase size of sorted sublist and go to next passtrhough
                 return insertion(_list, i+1)  
 
             # If they are in order, increase size of sorted sublist and go to next passthrough
@@ -86,8 +90,8 @@ def quick(_list):
 
 
 if __name__ == '__main__':
-    #print(bubble([3,2,1,7,9,10,11,45,-1, "a"]))
-    #print(bubble([0]))
-    #print(bubble([2,0]))
+    print(bubble([3,2,1,7,9,10,11,45,-1]))
+    print(bubble([0]))
+    print(bubble([2,0]))
 
-    print(insertion([10,1,0,8,-1]))
+    print(insertion([-30,10,1,0,8,-1,-50]))
