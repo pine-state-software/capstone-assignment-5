@@ -1,6 +1,15 @@
 def bubble(_list):
     '''
-        Docstring
+    Sort a numeric list using bubble sort
+
+    Args:
+        _list: list to be sorted
+
+    Returns:
+        _list: sorted list
+
+    Raises:
+        TypeError: If the list has invalid element(s)
     '''
 
     length = len(_list)
@@ -37,6 +46,6 @@ def insertion(_list):
 
 
 if __name__ == '__main__':
-    print(bubble([3,2,1,7,9,10,11,45,-1]))
+    print(bubble([3,2,1,7,9,10,11,45,-1, "a"]))
     print(bubble([0]))
     print(bubble([2,0]))
