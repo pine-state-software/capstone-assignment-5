@@ -68,7 +68,7 @@ jobs:
       - name: Build package
         run: |
            python -m build
-           # see what’s in the dist directory
+           # see what's in the dist directory
            ls -la dist
            
       - name: Upload package
