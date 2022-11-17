@@ -74,33 +74,54 @@ def insertion(_list, _position=0):
                 return insertion(_list, i + 1)
 
 
-def quick(_list):
+def quick(_list, low=0, high=-1):
     """
     Sort a numeric list using quick sort
     Args:
         _list: list to be sorted
+        low: low index of list
+        high: high index of list
     Returns:
         _list: sorted list
     Raises:
         TypeError: If the list has invalid element(s)
     """
 
+    # Set high index if it is the initial call
+    if (high == -1):
+        high = len(_list) - 1
+    
+    if (low < high):
+        p = part(_list, low, high)
+        quick(_list, low, p - 1)
+        quick(_list, p + 1, high)
+
     return _list
 
+def part(_list, low, high):
+    """
+    Sub function of quick()
+    Args:
+        _list: list to be sorted
+        low: low index of list
+        high: high index of list
+    Returns:
+        i+1: index of list partition
+    Raises:
+        TypeError: If the list has invalid element(s)
+    """
+    
+    length = len(_list)
+    pivot = _list[high]
+    i = low - 1
 
-if __name__ == "__main__":
+    # Loop through list partition
+    for j in range(length)[low:high]:
+        if (_list[j] <= pivot):
+            i += 1
+            _list[i], _list[j] = _list[j], _list[i]
+    
+    _list[i+1], _list[high] = _list[high], _list[i+1]
 
-    print(bubble([3, 2, 1, 7, 9, 10, 11, 45, -1]))
-    print(bubble([0]))
-    print(bubble([2, 0]))
-
-    print(insertion([-30, 10, 1, 0, 8, -1, -50]))
-    print(insertion([7]))
-    print(insertion([7, 0]))
-    print(insertion([13, 56]))
-
-    list = [-30, 10, 1, 0, 8, -1, -50]
-    insertion(list)
-    print(f"sorted_list: {list}")
-
-    print(quick([]))
+    # Return partition index
+    return (i+1)
