@@ -88,15 +88,16 @@ def quick(_list, low=0, high=-1):
     """
 
     # Set high index if it is the initial call
-    if (high == -1):
+    if high == -1:
         high = len(_list) - 1
-    
-    if (low < high):
+
+    if low < high:
         p = part(_list, low, high)
         quick(_list, low, p - 1)
         quick(_list, p + 1, high)
 
     return _list
+
 
 def part(_list, low, high):
     """
@@ -110,18 +111,18 @@ def part(_list, low, high):
     Raises:
         TypeError: If the list has invalid element(s)
     """
-    
+
     length = len(_list)
     pivot = _list[high]
     i = low - 1
 
     # Loop through list partition
     for j in range(length)[low:high]:
-        if (_list[j] <= pivot):
+        if _list[j] <= pivot:
             i += 1
             _list[i], _list[j] = _list[j], _list[i]
-    
-    _list[i+1], _list[high] = _list[high], _list[i+1]
+
+    _list[i + 1], _list[high] = _list[high], _list[i + 1]
 
     # Return partition index
-    return (i+1)
+    return i + 1
