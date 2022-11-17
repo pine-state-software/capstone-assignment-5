@@ -18,8 +18,9 @@
 
 import pytest
 import numpy as np
+from sort.sort import bubble
 
-def is_sorted(self, int_list):
+def is_sorted(self, int_lists):
     """
     Testing oracle.
     """
@@ -28,15 +29,15 @@ def is_sorted(self, int_list):
 @pytest.fixture
 def int_lists():
     # fixture which creates testing data for all tests
-    return [[3,2,1],
-	        [1,1,1],
-			np.random.randint(low=-10, high=200, size=5)] 
-    
+    return [[3, 2, 1], [1, 1, 1], np.random.randint(low=-10, high=200, size=5)]
+
 def test_bubble(int_lists):
-    assert True
+    assert sort.bubble(int_lists[0]) == [1,2,3]
+
 
 def test_quick(int_lists):
-    assert True
+    assert sort.quick(int_lists[0]) == [1,2,3]
+
 
 def test_insertion(int_lists):
-    assert True
+    assert sort.insertion(int_lists[0]) == [1,2,3]
