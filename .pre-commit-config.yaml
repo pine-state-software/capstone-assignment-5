@@ -1,0 +1,13 @@
+repos:
+ - repo: https://github.com/awslabs/git-secrets.git
+   rev: 0652a46d8a02b913104363f8d9f91d7f8f040f7c
+   hooks: 
+   - id: git-secrets
+ - repo: https://github.com/psf/black
+   rev: 20.8b1
+   hooks:
+   - id: black
+ - repo: https://github.com/PyCQA/flake8.git
+   rev: 16c371d41cd742f975171826de0ad5d707162c1d
+   hooks:
+   - id:  flake8
