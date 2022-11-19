@@ -1,0 +1,3 @@
+to run the test files
+
+use python -m pytest -q test/ from the project folder in cmd

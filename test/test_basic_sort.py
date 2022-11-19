@@ -18,7 +18,7 @@
 
 import pytest
 import numpy as np
-from sort.sort import bubble, quick, insertion
+from sort import sort
 
 def is_sorted(self, int_lists):
     """
