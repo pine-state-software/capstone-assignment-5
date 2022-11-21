@@ -18,9 +18,10 @@
 
 import pytest
 import numpy as np
+from sort import sort
 
 
-def is_sorted(self, int_list):
+def is_sorted(self, int_lists):
     """
     Testing oracle.
     """
@@ -34,12 +35,12 @@ def int_lists():
 
 
 def test_bubble(int_lists):
-    assert True
+    assert sort.bubble(int_lists[0]) == [1, 2, 3]
 
 
 def test_quick(int_lists):
-    assert True
+    assert sort.quick(int_lists[0]) == [1, 2, 3]
 
 
 def test_insertion(int_lists):
-    assert True
+    assert sort.insertion(int_lists[0]) == [1, 2, 3]
