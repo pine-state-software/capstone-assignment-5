@@ -32,3 +32,24 @@ Possible work division, three sub-teams:
 1. Implementing testing code, mastering pytest, black, flake8 (tasks 3,4,6).
 1. Understanding pytest, black, flake8 and mastering GitHub workflows (tasks 5,6).
 
+
+The code our team added to this repository does the following:
+1. Sorting - the sorting algoritms can be found in ./sort/sort.py
+    our team implemented quick sort, bubble sort, and insertion sort
+2. Testing - 
+    
+
+Our devops workflow has 2 parts:
+1. Precommit checking
+2. Workflow testing on push
+
+Precommit checking is configured though our .pre-commit-config.yml file. It uses 4 different repositories to do the following:
+1. check if AWS secret keys are included in the commit by utilizing git secrets
+2. format code though python black
+3. check the formating of code though flake8 
+4. check the flile length to ensure no huge files are commited
+
+After a push occurs our github workflow runs to test the following on python versions 3.9 and 3.10 :
+1. Does the pushed code follow flake8 and python black formatting
+2. Do the test files return successful 
+3. Can the project be built and packaged on Windows, Mac, and Ubuntu systems
